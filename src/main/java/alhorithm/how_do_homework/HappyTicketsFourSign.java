@@ -8,8 +8,8 @@ public class HappyTicketsFourSign {
         lucky();
     }
 
+    //  3422||2234
     private static int lucky() {
-
         int count = 0;
         for (int a1 = 0; a1 <= 9; a1++) {
             for (int a2 = 0; a2 <= 9; a2++) {
@@ -41,6 +41,7 @@ class HappyTicketsOneSign {
         lucky();
     }
 
+    //  2||2
     private static int lucky() {
         int count = 0;
         for (int a1 = 0; a1 <= 9; a1++) {
@@ -49,7 +50,6 @@ class HappyTicketsOneSign {
                     count++;
                 }
             }
-
         }
         log.info("result: " + count);
         return count;

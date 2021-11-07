@@ -2,9 +2,8 @@ package alhorithm.how_do_homework;
 
 import lombok.extern.slf4j.Slf4j;
 
-// happy ticket = 10 if number  "1234"
 @Slf4j
-public class HappyTickets {
+public class HappyTicketsFourSign {
     public static void main(String... args) {
         lucky();
     }
@@ -37,12 +36,11 @@ public class HappyTickets {
 }
 
 @Slf4j
-class HappyTicketsTwo {
+class HappyTicketsOneSign {
     public static void main(String... args) {
         lucky();
     }
 
-    // happy ticket = 10 if number  "1"
     private static int lucky() {
         int count = 0;
         for (int a1 = 0; a1 <= 9; a1++) {

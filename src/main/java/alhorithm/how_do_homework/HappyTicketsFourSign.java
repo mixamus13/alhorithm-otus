@@ -55,3 +55,28 @@ class HappyTicketsOneSign {
         return count;
     }
 }
+
+@Slf4j
+class HappyTicketsTwoSign {
+    public static void main(String... args) {
+        lucky();
+    }
+
+    //  21||03
+    private static int lucky() {
+        int count = 0;
+        for (int a1 = 0; a1 <= 9; a1++) {
+            for (int a2 = 0; a2 <= 9; a2++) {
+                for (int b2 = 0; b2 <= 9; b2++) {
+                    for (int b1 = 0; b1 <= 9; b1++) {
+                        if (a1 + a2 == b1 + b2) {
+                            count++;
+                        }
+                    }
+                }
+            }
+        }
+        log.info("result: " + count);
+        return count;
+    }
+}

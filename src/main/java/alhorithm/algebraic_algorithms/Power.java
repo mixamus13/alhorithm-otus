@@ -156,6 +156,12 @@ class PrimeTest {
                 log.info("number is prime: " + i);
             }
         }
+
+        for (int i = 1; i < 1000; i++) {
+            if (isPrimeOptimized(i)) {
+                log.info("number is prime optimized: " + i);
+            }
+        }
     }
 
     private static boolean isPrime(int number) {
@@ -164,6 +170,27 @@ class PrimeTest {
         }
         for (int i = 2; i * i < number; i++) {
             if (number % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private static boolean isPrimeOptimized(int number) {
+        if (number < 2) {
+            return false;
+        }
+
+        if (number % 2 == 0) {
+            return number == 2;
+        }
+
+        if (number % 3 == 0) {
+            return number == 3;
+        }
+
+        for (int i = 5; i * i <= number; i += 6) {
+            if (number % i == 0 || number % (i + 2) == 0) {
                 return false;
             }
         }

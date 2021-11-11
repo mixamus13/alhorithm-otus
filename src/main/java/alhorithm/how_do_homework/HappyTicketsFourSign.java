@@ -80,3 +80,28 @@ class HappyTicketsTwoSign {
         return count;
     }
 }
+
+@Slf4j
+class HappyTicketsRecursion {
+    public static void main(String... args) {
+        luckyTickets(0, 0, 0);
+    }
+
+    //  21||03
+    private static void luckyTickets(int digitNumber, int sumOne, int sumTwo) {
+        int count = 0;
+        int n = 0;
+        if (digitNumber == n) {
+            if (sumOne == sumTwo) {
+                count++;
+                return;
+            }
+        }
+
+        for (int a = 0; a <= 9; a++) {
+            for (int b = 0; b <= 9; b++) {
+                luckyTickets(digitNumber + 1, sumOne + a, sumTwo + b);
+            }
+        }
+    }
+}

@@ -147,3 +147,26 @@ class Eratosfen {
         return primes;
     }
 }
+
+@Slf4j
+class PrimeTest {
+    public static void main(String... args) {
+        for (int i = 1; i < 1000; i++) {
+            if (isPrime(i)) {
+                log.info("number is prime: " + i);
+            }
+        }
+    }
+
+    private static boolean isPrime(int number) {
+        if (number < 2) {
+            return false;
+        }
+        for (int i = 2; i * i < number; i++) {
+            if (number % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+}

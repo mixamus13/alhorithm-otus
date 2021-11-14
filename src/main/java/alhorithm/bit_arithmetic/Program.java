@@ -10,7 +10,7 @@ public class Program {
 
 class BitBoardKing {
     public static void main(String... args) {
-        System.out.println("position king = " + getKingBitboardMoves(56));
+        System.out.println("position king = " + getKingBitboardMoves(19));
     }
 
     public static long getKingBitboardMoves(int position) {
@@ -28,16 +28,15 @@ class BitBoardKing {
 
 class BitBoardHorse {
     public static void main(String... args) {
-        System.out.println("position horse = " + getHorseBitboardMoves(20));
+        System.out.println("position horse = " + getHorseBitboardMoves(63));
     }
 
     public static long getHorseBitboardMoves(int position) {
         long horse = 1L << position;
-        long mask =
-                (horse << 1) | (horse >> 1) |
-                        (horse >> 8) | (horse << 8) |
-                        (horse >> 9) | (horse << 9) |
-                        (horse >> 7) | (horse << 7);
+        long mask = (horse << 8) | (horse << 16) | (horse << 17) | (horse << 15)
+                | (horse >> 8) | (horse >> 16) | (horse >> 17) | (horse >> 15)
+                | (horse >> 1) | (horse >> 2) | (horse >> 10) | (horse << 6)
+                | (horse << 1) | (horse << 2) | (horse << 10) | (horse >> 6);
         return mask;
     }
 }

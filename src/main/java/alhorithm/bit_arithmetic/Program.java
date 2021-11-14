@@ -1,33 +1,10 @@
 package alhorithm.bit_arithmetic;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-
 public class Program {
     public static void main(String... args) {
         System.out.println(1100 & 1010);
         System.out.println(1100 | 1010);
         System.out.println(1100 ^ 1010);
-    }
-}
-
-@Getter
-@Setter
-@AllArgsConstructor
-class Position {
-    long pawns;
-    long rooks;
-    long knights;
-    long queens;
-    long bishops;
-    long kings;
-
-    long whites;
-    long blacks;
-
-    void getPosition() {
-        long rw = rooks & whites;
     }
 }
 

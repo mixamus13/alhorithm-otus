@@ -2,14 +2,12 @@ package alhorithm.algebraic_algorithms;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.FieldNameConstants;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
 
 @Slf4j
@@ -123,7 +121,7 @@ class Random {
 
 class Eratosfen {
     public static void main(String... args) {
-        System.out.println(Arrays.toString(eratosfenPrimes(1000).toArray()));
+        System.out.println(Arrays.toString(eratosfenPrimes(100).toArray()));
     }
 
     private static List<Integer> eratosfenPrimes(int max) {

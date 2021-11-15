@@ -20,8 +20,9 @@ class BitBoardKing {
         long emptyAForKing = king & emptyA;
         long emptyHForKing = king & emptyH;
         long mask = (emptyAForKing << 7) | (king << 8) | (emptyHForKing << 9) |
-                    (emptyAForKing >> 1) |               (emptyHForKing << 1) |
-                    (emptyAForKing >> 9) | (king >> 8) | (emptyHForKing >> 7);
+                (emptyAForKing >> 1) | (emptyHForKing << 1) |
+                (emptyAForKing >> 9) | (king >> 8) | (emptyHForKing >> 7);
+        CountBitsOne.popCount(mask);
         return mask;
     }
 }
@@ -37,7 +38,40 @@ class BitBoardHorse {
                 | (horse >> 8) | (horse >> 16) | (horse >> 17) | (horse >> 15)
                 | (horse >> 1) | (horse >> 2) | (horse >> 10) | (horse << 6)
                 | (horse << 1) | (horse << 2) | (horse << 10) | (horse >> 6);
+        CountBitsOne.popCount(mask);
         return mask;
+    }
+}
+
+class CountBitsOne {
+    public static void main(String... args) {
+        System.out.println("pop count = " + popCount(34));
+    }
+
+    public static int popCount(long mask) {
+        int count = 0;
+        while (mask > 0) {
+            if ((mask & 1) == 1) {
+                count++;
+            }
+            mask >>= 1;
+        }
+        return count;
+    }
+}
+
+class CountBitsTwo {
+    public static void main(String... args) {
+        System.out.println("pop count = " + popCount(34));
+    }
+
+    public static int popCount(long mask) {
+        int count = 0;
+        while (mask > 0) {
+            count++;
+            mask &= mask - 1;
+        }
+        return count;
     }
 }
 
